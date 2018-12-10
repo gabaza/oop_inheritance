@@ -52,3 +52,24 @@ class Multilinguist
     json_response['translationText']
   end
 end
+
+# The first child class that we're going to define represents a world-travelling math genius who can speak many
+ # languages and mentally add up huge lists of numbers.
+#
+# Instances of this class should be able to accept a list of numbers and return a sentence stating
+# the sum of the numbers. Make use of the inherited Multilinguist methods to ensure this sentence will
+# always be delivered in the local language.
+
+class MathGenius < Multilinguist
+
+  def report_total(array)
+    msg = "Hey the total is : #{array.sum}"
+    return self.say_in_local_language(msg)
+  end
+
+end
+
+gab = MathGenius.new
+puts gab.report_total([2,5,7,8,8888])
+gab.travel_to("India")
+puts gab.report_total([33333,44444])
